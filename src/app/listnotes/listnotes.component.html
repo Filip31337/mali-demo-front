@@ -1,0 +1,24 @@
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+            <th>Id</th>
+            <th>Naziv bilješke</th>
+            <th>Sadržaj bilješke</th>
+            <th>Datum kreiranja</th>
+            <th>Datum zadnjeg editiranja</th>
+            <th>Operations</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let note of notes">
+                <td>{{note.id}}</td>
+                <td>{{note.title}}</td>
+                <td>{{note.content}}</td>
+                <td>{{note.createdAt}}</td>
+                <td>{{note.updatedAt}}</td>
+                <td><button class="btn btn-danger" (click)="deleteNote(note)">Brisanje</button>
+                    <button class="btn btn-primary" (click)="updateNote(note)">Editiranje</button></td>
+            </tr>
+        </tbody>
+    </table>
+     <button class="btn btn-primary" (click)="newNote()">Nova bilješka</button>
+</div>
